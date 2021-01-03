@@ -1,0 +1,17 @@
+.waterfall-wrapper {
+    display: flex;
+    flex-direction: column;
+
+}
+.waterfall-tabs {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+}
+.waterfall-content {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    overflow-y: scroll;
+    padding: 16px 0;
+}

@@ -1,0 +1,40 @@
+.feed-wrapper {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    margin: 6px 0;
+    box-shadow: 0px 2px 16px #DDDDDD;
+}
+.feed-topbar {
+    display: flex;
+    flex-direction: row;
+    padding: 16px 24px 4px 24px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.feed-topbar-date {
+    opacity: 0.45;
+    font-family: Roboto-Medium;
+    font-size: 10px;
+    color: #37352f;
+    opacity: 60.0%;
+    letter-spacing: 0;
+}
+
+.feed-topbar-icon {
+    margin-top: -4px;
+    margin-right: -8px;
+}
+.feed-content {
+    padding: 10px 24px 20px 24px;
+    color: #37352f;
+    line-height: 2.1;
+    text-align: left;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}

@@ -1,0 +1,16 @@
+.editor-wrapper {
+    width: 586px;
+    height: auto;
+    border: 2px solid #E5E5E5;
+    border-radius: 8px;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 44px;
+}
+
+.editor-content {
+    padding: 10px 24px;
+    background: #ffffff;
+    color: #323232;
+}

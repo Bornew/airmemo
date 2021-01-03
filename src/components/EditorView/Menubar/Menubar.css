@@ -1,0 +1,33 @@
+.editor-menubar {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    padding: 14px 16px 8px 20px;
+    margin-bottom: 8px;
+}
+
+.editor-menubar-left {
+
+}
+
+.editor-menubar-right {
+
+}
+
+.submit-btn {
+    width: 72px;
+    height: 32px;
+    border-radius: 5px;
+    background: #457CE0;
+    font-family: Roboto-Bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0.38px;
+    border: none;
+    outline: none;
+}
+.submit-btn:disabled {
+    opacity: 0.3;
+    background: #457CE0;
+}

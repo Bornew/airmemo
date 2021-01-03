@@ -1,0 +1,13 @@
+.editor-toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: left;
+    padding: 14px 24px 8px 24px;
+}
+.editor-toolbar-left {
+    display: flex;
+    width: 72px;
+    justify-content: space-between;
+}
+
