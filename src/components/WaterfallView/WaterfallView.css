@@ -11,7 +11,7 @@
 .waterfall-content {
     display: flex;
     flex-direction: column;
-    height: 600px;
-    overflow-y: scroll;
+    /*height: 600px;*/
+    /*overflow-y: scroll;*/
     padding: 16px 0;
 }
