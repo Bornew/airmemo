@@ -1,10 +1,11 @@
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo, useEffect } from "react";
 import "./EditorBlock.css";
 import {
   Node,
   Editor,
   Transforms,
   Range,
+  Text,
   Point,
   createEditor,
   Element as SlateElement,
@@ -19,26 +20,95 @@ const SHORTCUTS = {
   ">": "block-quote",
   "-[ ]": "checklist-item",
 };
-
-const EditorBlock = () => {
+const EditorBlock = (props) => {
+  const { getEditorContent } = props;
   const [value, setValue] = useState(initialValue);
   const renderElement = useCallback((props) => <Element {...props} />, []);
   const editor = useMemo(
     () => withShortcuts(withReact(withHistory(createEditor()))),
     []
   );
+  const updateEditorContent = useCallback(()=>{
+    getEditorContent(value);
+    console.log(value);
+  }, [value, getEditorContent]);
+
+  const Leaf = (props) => {
+    return (
+      <span
+        {...props.attributes}
+        style={{ fontWeight: props.leaf.bold ? "bold" : "normal" }}
+      >
+        {props.children}
+      </span>
+    );
+  };
+  const renderLeaf = useCallback((props) => {
+    return <Leaf {...props} />;
+  }, []);
+  const renderMark = (props, editor, next) => {
+    if (props.mark.type === "bold") {
+      return <strong>{props.children}</strong>;
+    } else if (props.mark.type === "italic") {
+      return <em>{props.children}</em>;
+    }
+    return next;
+  };
+  const onKeyDown = (event, editor, next) => {
+    if (event.key == "b" && event.metaKey) {
+      editor.toggleMark("bold");
+    } else if (event.key == "i" && event.metaKey) {
+      editor.toggleMark("italic");
+    } else if (event.key == "u" && event.metaKey) {
+      editor.toggleMark("underline");
+    } else {
+      return next; // don't forget to call next if you don't handle it.
+    }
+  };
+  useEffect(() => {
+    console.log(value, typeof getEditorContent);
+    updateEditorContent();
+  }, [value]);
   return (
-    <div className="editor-input">
+    <div>
+      {/*<button*/}
+      {/*  onClick={(e) => {*/}
+      {/*    e.preventDefault();*/}
+      {/*    // editor.toggleMark("bold");*/}
+      {/*    Transforms.setNodes(*/}
+      {/*      editor,*/}
+      {/*      { bold: true },*/}
+      {/*      // Apply it to text nodes, and split the text node up if the*/}
+      {/*      // selection is overlapping only part of it.*/}
+      {/*      { match: (n) => Text.isText(n), split: true }*/}
+      {/*    );*/}
+      {/*  }}*/}
+      {/*>*/}
+      {/*  bold*/}
+      {/*</button>*/}
       <Slate
         editor={editor}
         value={value}
+        renderMark={renderMark}
         onChange={(value) => setValue(value)}
       >
         <Editable
+          className="editor-input"
           renderElement={renderElement}
+          renderLeaf={renderLeaf}
           placeholder="Writing is not a way to PRESENT our thoughts, but a way to INSPIRE thinking"
           autoFocus
           tabIndex={2}
+          onKeyDown={onKeyDown}
+          onCompositionEnd={(e) => {
+            Transforms.setNodes(
+              editor,
+              {
+                key: +new Date(),
+              },
+              { match: Text.isText }
+            );
+          }}
         />
       </Slate>
     </div>
@@ -136,29 +206,13 @@ const withShortcuts = (editor) => {
 const Element = ({ attributes, children, element }) => {
   switch (element.type) {
     case "block-quote":
-      return (
-        <blockquote {...attributes}>
-          {children}
-        </blockquote>
-      );
+      return <blockquote {...attributes}>{children}</blockquote>;
     case "bulleted-list":
-      return (
-        <ul {...attributes}>
-          {children}
-        </ul>
-      );
+      return <ul {...attributes}>{children}</ul>;
     case "list-item":
-      return (
-        <li {...attributes}>
-          {children}
-        </li>
-      );
+      return <li {...attributes}>{children}</li>;
     default:
-      return (
-        <p {...attributes}>
-          {children}
-        </p>
-      );
+      return <p {...attributes}>{children}</p>;
   }
 };
 
@@ -167,8 +221,7 @@ const initialValue = [
     type: "paragraph",
     children: [
       {
-        text:
-          '',
+        text: "",
       },
     ],
   },

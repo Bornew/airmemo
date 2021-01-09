@@ -2,29 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b7f3eac-3f49-4c56-abac-bf1fe3435cb0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/EditorView/EditorBlock/EditorBlock.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useHover.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useMemoSubmit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorView/EditorBlock/EditorBlock.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorView/EditorBlock/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/EditorBlock/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorView/EditorView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/EditorView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorView/Menubar/Menubar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/Menubar/Menubar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WaterfallView/FeedItem/FeedItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WaterfallView/FeedItem/FeedItem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WaterfallView/FeedItem/FeedItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WaterfallView/FeedItem/FeedItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WaterfallView/WaterfallView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WaterfallView/WaterfallView.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditorView/EditorBlock/EditorBlock.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/EditorBlock/EditorBlock.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditorView/EditorBlock/EditorBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/EditorBlock/EditorBlock.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditorView/EditorView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/EditorView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditorView/Menubar/Menubar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/Menubar/Menubar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/WaterfallView/WaterfallView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WaterfallView/WaterfallView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useRecordsLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useRecordsLoader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +94,7 @@
       <workItem from="1609754487853" duration="9000" />
       <workItem from="1609754931553" duration="140000" />
       <workItem from="1609756295584" duration="9220000" />
-      <workItem from="1610097886744" duration="24986000" />
+      <workItem from="1610097886744" duration="33514000" />
     </task>
     <servers />
   </component>
