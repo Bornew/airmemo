@@ -28,6 +28,11 @@ const EditorBlock = (props) => {
     () => withShortcuts(withReact(withHistory(createEditor()))),
     []
   );
+
+  /**
+   * this method is used to pass the editor value to the EditorView
+   * @type {function(): void}
+   */
   const updateEditorContent = useCallback(()=>{
     getEditorContent(value);
     console.log(value);
@@ -46,24 +51,32 @@ const EditorBlock = (props) => {
   const renderLeaf = useCallback((props) => {
     return <Leaf {...props} />;
   }, []);
+
+  /**
+   *
+   * @param props
+   * @param editor
+   * @param next
+   * @returns {JSX.Element|*}
+   */
   const renderMark = (props, editor, next) => {
     if (props.mark.type === "bold") {
       return <strong>{props.children}</strong>;
     } else if (props.mark.type === "italic") {
       return <em>{props.children}</em>;
     }
-    return next;
+    return next();
   };
   const onKeyDown = (event, editor, next) => {
-    if (event.key == "b" && event.metaKey) {
-      editor.toggleMark("bold");
-    } else if (event.key == "i" && event.metaKey) {
-      editor.toggleMark("italic");
-    } else if (event.key == "u" && event.metaKey) {
-      editor.toggleMark("underline");
-    } else {
-      return next; // don't forget to call next if you don't handle it.
-    }
+    // if (event.key == "b" && event.metaKey) {
+    //   editor.toggleMark("bold");
+    // } else if (event.key == "i" && event.metaKey) {
+    //   editor.toggleMark("italic");
+    // } else if (event.key == "u" && event.metaKey) {
+    //   editor.toggleMark("underline");
+    // } else {
+    //   return next(); // don't forget to call next if you don't handle it.
+    // }
   };
   useEffect(() => {
     console.log(value, typeof getEditorContent);

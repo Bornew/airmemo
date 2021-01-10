@@ -24,7 +24,7 @@
 .feed-topbar-date {
   opacity: 0.45;
   font-family: Roboto-Medium;
-  font-size: 10px;
+  font-size: 12px;
   color: #37352f;
   opacity: 60%;
   letter-spacing: 0;
@@ -33,6 +33,7 @@
 .feed-topbar-icon {
   margin-top: -4px;
   margin-right: -8px;
+  cursor: pointer;
 }
 .feed-content {
   padding: 10px 24px 20px 24px;

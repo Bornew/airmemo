@@ -1,5 +1,5 @@
 import "./App.css";
-import EditorView from "./components/EditorView/EditorView";
+import Editor from './components/EditorView';
 import WaterfallView from "./components/WaterfallView";
 
 function App() {
@@ -8,8 +8,7 @@ function App() {
       <div className="topbar">
         <span className="topbar-heading">Just drop your ideas here</span>
       </div>
-      <EditorView />
-      {/*<TabList/>*/}
+      <Editor />
       <WaterfallView/>
     </div>
   );

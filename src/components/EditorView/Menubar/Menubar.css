@@ -26,8 +26,10 @@
     letter-spacing: 0.38px;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 .submit-btn:disabled {
     opacity: 0.3;
     background: #457CE0;
+    cursor: not-allowed;
 }

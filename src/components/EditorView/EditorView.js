@@ -9,14 +9,17 @@ const EditorView = () => {
   const getEditorContent = useCallback((content) => {
     setContent(content);
   }, []);
+  // var container = document.getElementById('editor');
+  // var editor = new Quill(container);
   return (
-    <div className="editor-wrapper">
-      <Toolbar />
-      <div className="editor-content">
-        <EditorBlock getEditorContent={getEditorContent} />
-        {/*其他block*/}
+    <div>
+      <div className="editor-wrapper">
+        <Toolbar />
+        <div className="editor-content">
+          <EditorBlock getEditorContent={getEditorContent} />
+        </div>
+        <Menubar content={content} />
       </div>
-      <Menubar content={content} />
     </div>
   );
 };
