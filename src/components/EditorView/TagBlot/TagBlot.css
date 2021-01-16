@@ -1,0 +1,10 @@
+.custom-tag {
+  color: #5783f7;
+  background: #eef3fe;
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+.custom-tag::before {
+  content: '#'
+}

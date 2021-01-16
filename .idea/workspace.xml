@@ -2,22 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b7f3eac-3f49-4c56-abac-bf1fe3435cb0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/EditorView/Editor-bubble.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/EditorView/Editor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/EditorView/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EditorView/TagBlot/TagBlot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EditorView/TagBlot/TagBlot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EditorView/TagBlot/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorView/EditorBlock/EditorBlock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/EditorBlock/EditorBlock.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorView/EditorView.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/EditorView.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorView/EditorView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/EditorView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorView/Menubar/Menubar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/Menubar/Menubar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorView/Menubar/Menubar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/Menubar/Menubar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/QuoteBlock/QuoteBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/Editor-snow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WaterfallView/FeedItem/FeedItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WaterfallView/FeedItem/FeedItem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WaterfallView/TabItem/TabItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WaterfallView/TabItem/TabItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditorView/Editor-snow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/Editor-snow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditorView/Editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/Editor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,10 +42,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -102,7 +96,9 @@
       <workItem from="1609756295584" duration="9220000" />
       <workItem from="1610097886744" duration="33985000" />
       <workItem from="1610247816160" duration="397000" />
-      <workItem from="1610249861551" duration="10964000" />
+      <workItem from="1610249861551" duration="11635000" />
+      <workItem from="1610352844124" duration="1526000" />
+      <workItem from="1610537921447" duration="16343000" />
     </task>
     <servers />
   </component>
