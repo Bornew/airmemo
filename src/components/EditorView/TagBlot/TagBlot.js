@@ -4,7 +4,7 @@ import "./TagBlot.css";
 let Inline = ReactQuill.Quill.import("blots/inline");
 class TagBlot extends Inline {
   static create(value) {
-    console.log(value);
+    console.log('value', value);
     let node = super.create();
     node.setAttribute("style", "background: #eef3fe; color: #5783f7;");
     node.setAttribute("title", value.title);

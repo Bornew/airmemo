@@ -5,58 +5,26 @@ import Menubar from "./Menubar";
 import { LinkTwo, CheckCorrect, Quote, Pound } from "@icon-park/react";
 import MarkdownShortcuts from "quill-markdown-shortcuts";
 import TagBlot from "./TagBlot";
+import MagicUrl from "quill-magic-url";
+import CustomToolbar from "./Toolbar";
 
 /**
  * register modules
  */
 Quill.register("modules/markdownShortcuts", MarkdownShortcuts);
 Quill.register("formats/tag", TagBlot);
+Quill.register("modules/magicUrl", MagicUrl);
 
-const CustomStarButton = () => <span className="octicon octicon-star" />;
-const CustomTagButton = () => (
-  <Pound
-    theme="outline"
-    size="16"
-    fill="#7D7D7D"
-    strokeWidth={3}
-    strokeLinecap="butt"
-  />
-);
-const CustomTodoButton = () => (
-  <CheckCorrect
-    theme="outline"
-    size="16"
-    fill="#7D7D7D"
-    strokeWidth={3}
-    strokeLinecap="butt"
-  />
-);
-const CustomLinkButton = () => (
-  <LinkTwo
-    theme="outline"
-    size="16"
-    fill="#7D7D7D"
-    strokeWidth={3}
-    strokeLinecap="butt"
-  />
-);
-
-const CustomQuoteButton = () => (
-  <Quote
-    theme="outline"
-    size="16"
-    fill="#7D7D7D"
-    strokeWidth={3}
-    strokeLinecap="butt"
-  />
-);
 /*
- * Event handler to be attached using Quill toolbar module (see line 73)
+ * Event handler to be attached using Quill toolbar module
  * https://quilljs.com/docs/modules/toolbar/
  */
 function checkForTag(content, indexPosition) {
+  // let quill = Editor.reactQuillRef.getEditor();
+  // console.log('quill', quill);
   let tag = /#(\w+)\s/;
   let find = content.match(tag);
+  console.log('find', find);
   let indexAfterInsertion = indexPosition;
   let updated = false;
   let comment;
@@ -65,15 +33,17 @@ function checkForTag(content, indexPosition) {
     indexAfterInsertion += find[1].length + 2;
     updated = true;
     let toReplacer =
-      '<span style="color:#5783F7; background: #EEF3FE; cursor: pointer; " title="tag-' +
-      find[1].toUpperCase() +
-      '">' + '#' +
+      '<tag className="custom-tag" style="background: #eef3fe; color: #5783f7;" title="tag-' +
       find[1] +
-      "</span>&nbsp;";
-    console.log(toReplacer);
+      '">' +
+      find[1] +
+      "</tag>&nbsp;";
+    console.log(toReplacer, indexAfterInsertion);
     comment = content.replace(/#(\w+)\s/, toReplacer);
+    //quill.focus();
+    //quill.setSelection(indexAfterInsertion, 0, Editor.reactQuillRef);
+    // quill.setSelection(indexAfterInsertion + 1);
   }
-  console.log(comment);
   return { content: comment, updated, indexAfterInsertion };
 }
 
@@ -83,63 +53,33 @@ function insertTodo() {
   this.quill.setSelection(cursorPosition + 1);
 }
 function insertTag() {
-  const range = this.quill.getSelection();
-  if (range) {
-    console.log(range.index + range.length + 2);
-    this.quill.format("tag", true);
-    this.quill.setSelection(range.index + range.length + 3);
-    this.quill.format("tag", false);
-  }
-
+  // const range = this.quill.getSelection();
+  // if (range) {
+  //   console.log(range.index + range.length + 2);
+  //   this.quill.format("tag", true);
+  //   console.log(this);
+  // }
+  const cursorPosition = this.quill.getSelection().index;
+  console.log(this);
+  this.quill.insertText(cursorPosition, "#");
+  this.quill.setSelection(cursorPosition + 1);
 }
 
-function formatTag() {
-  // this.quill.format("tag", true);
-}
 function insertQuote() {
   const cursorPosition = this.quill.getSelection().index;
   this.quill.formatLine(cursorPosition, 1, "blockquote", true);
   this.quill.deleteText(cursorPosition - 2, 2);
 }
-const CustomToolbar = () => (
-  <div id="toolbar">
-    {/*<button className="ql-bold" />*/}
-    {/*<button className="ql-image"/>*/}
-    {/*<button className=""/>*/}
-    {/*<button className="ql-italic" />*/}
-    {/*<button className="ql-insertStar">*/}
-    {/*  <CustomStarButton />*/}
-    {/*</button>*/}
-    <button className="ql-insertTag">
-      <CustomTagButton />
-    </button>
-    <button className="ql-blockquote">
-      <CustomQuoteButton />
-    </button>
-    <button className="ql-insertLink">
-      <CustomLinkButton />
-    </button>
-    <button className="ql-insertTodo">
-      <CustomTodoButton />
-    </button>
-  </div>
-);
-
 const Editor = (props) => {
   const [editorHtml, setEditorHtml] = useState("");
   const handleChange = (content) => {
     let editorHtml = content;
-    checkForTag(content);
     let newHtml = checkForTag(content);
     if (newHtml.updated === true) {
-      console.log(newHtml);
       editorHtml = newHtml.content;
-       // 此处需要将tag内容转变为tag format
+      console.log('new content', editorHtml);
     }
     setEditorHtml(editorHtml);
-    if(newHtml.updated === true) {
-      formatTag();
-    }
   };
 
   const formats = [
@@ -167,7 +107,7 @@ const Editor = (props) => {
         value={editorHtml}
         modules={Editor.modules}
         formats={formats}
-        // bounds={'.app'}
+        ref={(el) => { Editor.reactQuillRef = el }}
         placeholder="Writing is not a way to PRESENT our thoughts, but a way to INSPIRE thinking"
       />
       <Menubar content={editorHtml} />
@@ -186,6 +126,12 @@ Editor.modules = {
   },
   clipboard: {
     matchVisual: false,
+  },
+  magicUrl: {
+    // Regex used to check URLs during typing
+    urlRegularExpression: /(https?:\/\/[\S]+)|(www.[\S]+)|(mailto:[\S]+)|(tel:[\S]+)/,
+    // Regex used to check URLs on paste
+    globalRegularExpression: /(https?:\/\/|www\.|mailto:|tel:)[\S]+/g,
   },
   markdownShortcuts: {},
 };
