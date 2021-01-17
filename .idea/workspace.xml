@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b7f3eac-3f49-4c56-abac-bf1fe3435cb0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/EditorView/QuoteBlot/QuoteBlot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EditorView/QuoteBlot/QuoteBlot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EditorView/QuoteBlot/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/EditorView/Editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/Editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditorView/TagBlot/TagBlot.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/TagBlot/TagBlot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditorView/EditorView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/EditorView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/EditorView/TagBlot/TagBlot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/TagBlot/TagBlot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditorView/Toolbar/Toolbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/Toolbar/Toolbar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/EditorView/Toolbar/Toolbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/Toolbar/Toolbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EditorView/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EditorView/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +101,7 @@
       <workItem from="1610352844124" duration="1526000" />
       <workItem from="1610537921447" duration="16809000" />
       <workItem from="1610861389466" duration="5867000" />
+      <workItem from="1610871011432" duration="13729000" />
     </task>
     <servers />
   </component>

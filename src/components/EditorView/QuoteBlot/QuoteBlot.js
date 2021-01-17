@@ -1,10 +1,11 @@
 import ReactQuill, { Quill } from "react-quill";
-import "./TagBlot.css";
+import "./QuoteBlot.css";
 
-let Inline = Quill.import("blots/inline");
-class TagBlot extends Inline {
+let Block = Quill.import("blots/block");
+
+class QuoteBlot extends Block {
   static create(value) {
-    console.log('value', value);
+    console.log("value", value);
     let node = super.create();
     node.setAttribute("style", "");
     // node.setAttribute("title", value.title);
@@ -18,8 +19,8 @@ class TagBlot extends Inline {
     };
   }
 }
-TagBlot.blotName = "tag";
-TagBlot.tagName = "tag";
-TagBlot.className = "custom-tag";
+QuoteBlot.blotName = "quote";
+QuoteBlot.tagName = "quote";
+QuoteBlot.className = "custom-quote";
 
-export default TagBlot;
+export default QuoteBlot;

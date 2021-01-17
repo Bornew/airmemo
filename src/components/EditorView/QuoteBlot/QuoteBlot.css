@@ -1,0 +1,9 @@
+.custom-quote {
+  /*border-left: 4px solid #111;*/
+  /*padding-left: 1em;*/
+  display: block;
+  border-left: 3px solid #e5e5e5;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding-left: 16px;
+}

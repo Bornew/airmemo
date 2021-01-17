@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ReactQuill, { Quill } from "react-quill";
 import "./Editor-snow.css";
 import Menubar from "./Menubar";
-import { LinkTwo, CheckCorrect, Quote, Pound } from "@icon-park/react";
 import MarkdownShortcuts from "quill-markdown-shortcuts";
 import TagBlot from "./TagBlot";
 import MagicUrl from "quill-magic-url";
@@ -24,7 +23,7 @@ function checkForTag(content, indexPosition) {
   // console.log('quill', quill);
   let tag = /#(\w+)\s/;
   let find = content.match(tag);
-  console.log('find', find);
+  console.log("find", find);
   let indexAfterInsertion = indexPosition;
   let updated = false;
   let comment;
@@ -70,6 +69,7 @@ function insertQuote() {
   this.quill.formatLine(cursorPosition, 1, "blockquote", true);
   this.quill.deleteText(cursorPosition - 2, 2);
 }
+
 const Editor = (props) => {
   const [editorHtml, setEditorHtml] = useState("");
   const handleChange = (content) => {
@@ -77,7 +77,7 @@ const Editor = (props) => {
     let newHtml = checkForTag(content);
     if (newHtml.updated === true) {
       editorHtml = newHtml.content;
-      console.log('new content', editorHtml);
+      console.log("new content", editorHtml);
     }
     setEditorHtml(editorHtml);
   };
@@ -107,7 +107,9 @@ const Editor = (props) => {
         value={editorHtml}
         modules={Editor.modules}
         formats={formats}
-        ref={(el) => { Editor.reactQuillRef = el }}
+        ref={(el) => {
+          Editor.reactQuillRef = el;
+        }}
         placeholder="Writing is not a way to PRESENT our thoughts, but a way to INSPIRE thinking"
       />
       <Menubar content={editorHtml} />
