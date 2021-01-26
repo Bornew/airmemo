@@ -8,6 +8,7 @@ import QuoteBlot from "./QuoteBlot";
 import MagicUrl from "quill-magic-url";
 import { CheckCorrect, LinkTwo, Pound, Quote } from "@icon-park/react";
 import CustomToolbar from "./Toolbar";
+import TodoBlot from "../TodoBlot";
 
 /**
  * register modules
@@ -124,10 +125,9 @@ class EditorView extends React.Component {
 
   handleClickClearFormat() {
     const range = this.quillRef.getSelection();
-    if(range!==null && range.length){
+    if (range !== null && range.length) {
       this.quillRef.removeFormat(range.index, range.length);
-    }
-    else{
+    } else {
       this.quillRef.setSelection(range);
     }
   }
@@ -193,6 +193,7 @@ class EditorView extends React.Component {
           handleClickTodo={this.handleClickTodo.bind(this)}
           handleClickClearFormat={this.handleClickClearFormat.bind(this)}
         />
+        <TodoBlot />
         <ReactQuill
           onChange={this.handleChange}
           value={this.state.editorHtml}

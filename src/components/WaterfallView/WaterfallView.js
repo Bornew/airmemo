@@ -1,7 +1,8 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import "./WaterfallView.css";
 import TabItem from "./TabItem";
-import FeedItem from "./FeedItem";
+import FeedList from "./FeedList";
+import TodoList from './TodoList';
 import useRecordsLoader from "../../hooks/useRecordsLoader";
 import { BASE_URL, TABLE_MEMO_URL } from "./../../config";
 
@@ -15,12 +16,7 @@ const WaterfallView = () => {
   const refArr = [ref1, ref2, ref3];
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [recordsArr, loading] = useRecordsLoader(TABLE_MEMO_URL, []);
-  console.log(
-    "typeof recordsArr",
-    typeof recordsArr,
-    recordsArr,
-    loading
-  );
+  console.log("typeof recordsArr", typeof recordsArr, recordsArr, loading);
   const handleClickTab = (ref) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
@@ -46,18 +42,8 @@ const WaterfallView = () => {
         ))}
       </div>
       <div className="waterfall-content">
-        {loading && !recordsArr ? (
-          <p>loading...</p>
-        ) : (
-          recordsArr.map((record) => {
-            return (
-              <FeedItem
-                date={record.createdTime}
-                content={record.fields.memo}
-              />
-            );
-          })
-        )}
+        <TodoList />
+        <FeedList />
       </div>
     </div>
   );

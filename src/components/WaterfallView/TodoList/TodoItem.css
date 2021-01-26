@@ -3,7 +3,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-height: 14px;
   line-height: 1.8;
   text-align: left;
   font-family: Roboto;
@@ -16,6 +15,25 @@
   line-weight: 300;
 }
 
+.todoblot-container--active {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.8;
+  text-align: left;
+  font-family: Roboto;
+  font-size: 14px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+  margin: 0;
+  padding: 4px 20px;
+  color: #37352f;
+  line-weight: 300;
+  background:#F6F6F6;
+}
 .todoblot-left {
   display: flex;
   flex-display: row;
